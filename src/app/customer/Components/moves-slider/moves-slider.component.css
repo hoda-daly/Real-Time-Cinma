@@ -1,0 +1,15 @@
+.carousel-item{
+  max-height: 600px;
+  overflow: hidden
+}
+
+a{
+  color: #fff;
+  text-decoration: none;
+  font-size:28px;
+}
+
+img{
+  display: block;
+  width: 100%;
+}

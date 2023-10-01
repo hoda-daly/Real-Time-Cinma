@@ -1,0 +1,20 @@
+<div
+  class="backdrop"
+  [ngStyle]="{ 'background-image': 'url(' + movie?.backdrop + ')' }"
+>
+  <h2>{{ movie?.title }}</h2>
+</div>
+
+<div class="showtimes container">
+  <div class="showtime-section">
+    <button
+      mat-stroked-button
+      color="accent"
+      *ngFor="let time of Times"
+      [matBadge]="time.reservation?.length"
+      (click)="showSeats()"
+    >
+      <time>{{ time.time }}</time>
+    </button>
+  </div>
+</div>

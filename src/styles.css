@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    /* background-image: url('https://img.freepik.com/free-vector/film-strip-background-with-clapper-board_1017-33456.jpg?size=626&ext=jpg&ga=GA1.2.1805768502.1665313471&semt=sph');
+    background-size: cover;
+    background-repeat: no-repeat; */
+    height: 100vh;
+
+}

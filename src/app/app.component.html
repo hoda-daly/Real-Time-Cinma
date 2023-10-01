@@ -1,0 +1,32 @@
+<div class="parent">
+    <mat-toolbar >
+        <span>Cinema</span>
+        <button mat-button routerLink="/">Home</button>
+        <button mat-button routerLink="/vendor">Vendor</button>
+        <span style="flex-grow: 1;"></span>
+
+        <button mat-icon-button matTooltip="login"
+                *ngIf="!auth.isLoggedIn"
+                routerLink="/sign-in"> <mat-icon>login</mat-icon> </button>
+
+                <a [matMenuTriggerFor]="menu" *ngIf="auth.isLoggedIn">
+                  <img class="avatar" [src]="auth.LoggedInCustomer?.photoURL??'https://robohash.org/generate'" [alt]="auth.LoggedInCustomer?.displayName" referrerpolicy="no-referrer">
+                </a>
+    </mat-toolbar>
+
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+</div>
+
+
+<mat-menu #menu="matMenu">
+  <button mat-menu-item routerLink="my-reservation">
+    <mat-icon>person</mat-icon> my Reservation History
+  </button>
+  <mat-divider></mat-divider>
+  <button mat-menu-item (click)="auth.SignOut()">
+    <mat-icon>exit_to_app</mat-icon>logout
+  </button>
+
+</mat-menu>

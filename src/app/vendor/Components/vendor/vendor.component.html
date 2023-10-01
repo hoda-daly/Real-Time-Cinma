@@ -1,0 +1,29 @@
+<div class="container">
+
+  <button
+    mat-raised-button 
+    [matMenuTriggerFor]="menu"
+    color="accent"> <mat-icon>add</mat-icon> add new movie </button>
+
+  <button
+    mat-button
+    (click)="OnDeleteEntierDatabase()"
+    color="warn"><mat-icon>delete</mat-icon> drop the database </button>
+
+    <app-movie-list [movies]="movies"
+     [DisplayForVendor]="true"
+      (Edit)="OnEdit($event)"></app-movie-list>
+
+</div>
+
+
+<mat-menu #menu="matMenu">
+  <button mat-menu-item routerLink="new-movie" >
+    <mat-icon>create_new_folder</mat-icon> add with form
+  </button>
+
+  <button mat-menu-item (click)="onDataSead()">
+    <mat-icon>sync</mat-icon> Seed the local data
+  </button>
+
+</mat-menu>

@@ -1,0 +1,66 @@
+<mat-card>
+  <mat-card-title>
+    <h2>Login</h2>
+  </mat-card-title>
+
+  <mat-card-content>
+    <form>
+      <p>
+        <mat-form-field appearance="outline">
+          <input
+            type="text"
+            matInput
+            placeholder="Email Address"
+            #Username
+            required
+          />
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field appearance="outline">
+          <input
+            type="password"
+            matInput
+            placeholder="Password"
+            #Password
+            required
+          />
+        </mat-form-field>
+      </p>
+
+      <button
+        type="submit"
+        mat-flat-button
+        color="primary"
+        class="loginbtn"
+        (click)="authService.SignIn(Username.value, Password.value)">
+        Login
+      </button>
+
+      <button mat-button routerLink="/forgot-password" color="warn">
+        Forgetten Password?
+      </button>
+
+      <mat-divider
+        inset="true"
+        style="margin: 20px 0px; width: 100%"
+      ></mat-divider>
+
+      <button
+        mat-flat-button color="accent"
+        (click)="authService.GoogleAuth()"
+        class="googlebtn">
+        <mat-icon>google</mat-icon>
+        Login with Google
+      </button>
+
+      <span>
+        Don't have account?
+        <button mat-button color="accent" routerLink="/register-user">
+          sign Up
+        </button>
+      </span>
+    </form>
+  </mat-card-content>
+</mat-card>

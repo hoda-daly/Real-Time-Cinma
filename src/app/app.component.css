@@ -1,0 +1,18 @@
+.parent {
+    height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+/* Grid row 2 */
+.content {
+    overflow-y: auto;
+}
+
+.avatar{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: 1px solid #999;
+}
+

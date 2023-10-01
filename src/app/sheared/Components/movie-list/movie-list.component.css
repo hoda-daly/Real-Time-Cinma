@@ -1,0 +1,21 @@
+.MovieList {
+    margin-top: 25px;
+    padding-top: 25px;
+    box-shadow: -1px 14px 20px 20px #030b18;
+    background-color: rgba(2, 32, 57, 0.542);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 270px);
+    grid-gap: 1rem;
+    justify-content: center;
+
+    color:#ddd;
+}
+
+
+
+app-movie{
+    flex-basis: 200px;
+    height: 100%;
+}

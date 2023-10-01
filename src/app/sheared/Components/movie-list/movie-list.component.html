@@ -1,0 +1,7 @@
+<div class="MovieList container">
+    <app-movie 
+      *ngFor="let Movie of movies"
+      [DisplayForVendor]="DisplayForVendor"
+      (Edit)="OnEdit(Movie)"
+      [movie]="Movie"></app-movie>
+</div>

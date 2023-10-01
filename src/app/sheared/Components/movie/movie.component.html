@@ -1,0 +1,43 @@
+
+
+<div class="card" *ngIf="movie">
+    <div class="card-img-top" data-mdb-ripple-color="dark">
+      <img [src]="movie.imgUrl" [alt]="movie.title" class="img-fluid"/>
+    </div>
+    <div class="card-body">
+      <h3 class="card-title">{{ movie.title }}</h3>
+      <p class="card-text">{{ (movie.description |  slice:0:50) +(movie.description.length>50?' ...':'') }}</p>
+
+      <button type="button"
+      mat-raised-button
+      color="primary"
+      *ngIf="!DisplayForVendor"
+      [routerLink]="['/movie',movie.id]">
+      see more
+    </button>
+
+      <button mat-icon-button
+            color="primary"
+            routerLink="movie/{{movie.id}}/showtimes"
+            matTooltip="Edit showtimes"
+            *ngIf="DisplayForVendor">
+        <mat-icon>schedule</mat-icon>
+      </button>
+
+      <button mat-icon-button
+            color="primary"
+            (click)="OnEdit()"
+            matTooltip="Edit"
+            *ngIf="DisplayForVendor">
+        <mat-icon>edit</mat-icon>
+      </button>
+
+      <button mat-icon-button
+            color="warn"
+            (click)="OnDelete()"
+            matTooltip="Delete"
+            *ngIf="DisplayForVendor">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </div>
